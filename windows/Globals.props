@@ -1,0 +1,103 @@
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(SolutionDir)Version.props"/>
+  <Import Project="$(SolutionDir)Config.props"/>
+  <PropertyGroup Label="Standard settings">
+
+	<CPU Condition="'$(Platform)'=='Win32'">i386</CPU>
+	<CPU Condition="'$(Platform)'=='x64'">AMD64</CPU>
+	<MCPU Condition="'$(Platform)'=='Win32'">x86</MCPU>
+	<MCPU Condition="'$(Platform)'=='x64'">amd64</MCPU>
+
+	<!-- # Directory macros -->
+	<SRC>$(SolutionDir)..</SRC>
+	<DESTDIR>$(SRC)\out\dest_$(CPU)</DESTDIR>
+	<OBJDIR>$(SRC)\out\obj_$(CPU)</OBJDIR>
+
+	<INCDIR>$(DESTDIR)\inc</INCDIR>
+	<LIBDIR>$(DESTDIR)\lib</LIBDIR>
+	<BINDIR>$(DESTDIR)\bin</BINDIR>
+	<PLUGINDIR>$(BINDIR)</PLUGINDIR>
+	<DOCDIR>$(DESTDIR)\doc</DOCDIR>
+	<SBINDIR>$(BINDIR)</SBINDIR>
+	<LIBEXECDIR>$(BINDIR)</LIBEXECDIR>
+	<ASMDIR>$(BINDIR)</ASMDIR>
+	<INSTDIR>$(DESTDIR)\install</INSTDIR>
+	<SDKDIR>$(SRC)\out\sdk</SDKDIR>
+	<SDKINCDIR>$(SDKDIR)\inc</SDKINCDIR>
+	<SDKLIBDIR>$(SDKDIR)\lib\$(CPU)</SDKLIBDIR>
+	<SDKSRCDIR>$(SDKDIR)\src</SDKSRCDIR>
+	<SDKREDISTDIR>$(SDKDIR)\redist\$(CPU)</SDKREDISTDIR>
+
+	<SRCDIR Condition="'$(RELDIR)'!=''">$(SRC)\$(RELDIR)</SRCDIR>
+	<OBJ Condition="'$(RELDIR)'!=''">$(OBJDIR)\$(RELDIR)</OBJ>
+	<OBJ Condition="'$(RELDIR)'==''">$(OBJDIR)</OBJ>
+
+	<!-- # Command macros -->
+
+	<MKDIR>md</MKDIR>
+	<CP>copy /Y</CP>
+	<LINK>link</LINK>
+	<LM>lib</LM>
+	<RM>del /q</RM>
+	<ECHO>echo</ECHO>
+	<RC>rc</RC>
+
+	<!--# Program macros -->
+
+	<AWK_CMD>gawk.exe</AWK_CMD>
+	<YACC_CMD>bison.exe</YACC_CMD>
+	<LEX_CMD>flex.exe</LEX_CMD>
+	<PYTHON>python.exe</PYTHON>
+	<PERL>perl.exe</PERL>
+	<CMP>cmp.exe</CMP>
+	<MAKECAT>makecat.exe</MAKECAT>
+	<HHC>hhc.exe</HHC>
+	<SED>sed.exe</SED>
+
+	<CANDLE_CMD>candle.exe</CANDLE_CMD>
+	<LIGHT_CMD>light.exe</LIGHT_CMD>
+
+	<!-- # Only used for tests -->
+	<SH>=sh.exe</SH>
+
+	<!-- # Commands -->
+	<AWK>$(AWK_CMD)</AWK>
+	<YACC>$(YACC_CMD) -y</YACC>
+	<LEX>$(LEX_CMD)</LEX>
+	<CANDLE>$(CANDLE_CMD) -nologo</CANDLE>
+	<LIGHT>$(LIGHT_CMD) -nologo</LIGHT>
+
+
+	<HEIMDAL_DISABLE_WARNINGS>4996;4127;4244;4100;4706;4214;4267;4018;4389;4204;4221;4295;4146</HEIMDAL_DISABLE_WARNINGS>
+	<HEIMDAL_GLOBAL_DEFINES>_CRT_SECURE_NO_WARNINGS;WIN32;_WIN32_WINNT=0x06010000;HAVE_CONFIG_H;HCRYPTO_DEF_PROVIDER=w32crypto</HEIMDAL_GLOBAL_DEFINES>
+
+	<!-- # For tests:-->
+	<PATH>$(PATH);$(BINDIR)</PATH>
+
+	<!-- # Convenience macros for import libraries and assemblies -->
+	<LIBASN1>$(LIBDIR)\libasn1.lib</LIBASN1>
+	<LIBCOMERR>$(LIBDIR)\libcom_err.lib</LIBCOMERR>
+	<LIBEDITLINE>$(LIBDIR)\libeditline.lib</LIBEDITLINE>
+	<LIBGSSAPI>$(LIBDIR)\libgssapi.lib</LIBGSSAPI>
+	<LIBHCRYPTO>$(LIBDIR)\libhcrypto.lib</LIBHCRYPTO>
+	<LIBHDB>$(LIBDIR)\libhdb.lib</LIBHDB>
+	<LIBHEIMBASE>$(LIBDIR)\libheimbase.lib</LIBHEIMBASE>
+	<LIBHEIMDAL>$(LIBDIR)\heimdal.lib</LIBHEIMDAL>
+	<LIBHEIMIPCC>$(LIBDIR)\libheim-ipcc.lib</LIBHEIMIPCC>
+	<LIBHEIMIPCS>$(LIBDIR)\libheim-ipcs.lib</LIBHEIMIPCS>
+	<LIBHEIMNTLM>$(LIBDIR)\libheimntlm.lib</LIBHEIMNTLM>
+	<LIBHX509>$(LIBDIR)\libhx509.lib</LIBHX509>
+	<LIBKADM5CLNT>$(LIBDIR)\libkadm5clnt.lib</LIBKADM5CLNT>
+	<LIBKADM5SRV>$(LIBDIR)\libkadm5srv.lib</LIBKADM5SRV>
+	<LIBKDC>$(LIBDIR)\libkdc.lib</LIBKDC>
+	<LIBLTM>$(LIBDIR)\libltm.lib</LIBLTM>
+	<LIBKRB5>$(LIBDIR)\libkrb5.lib</LIBKRB5>
+	<LIBRFC3961>$(LIBDIR)\librfc3961.lib</LIBRFC3961>
+	<LIBROKEN>$(LIBDIR)\libroken.lib</LIBROKEN>
+	<LIBSL>$(LIBDIR)\libsl.lib</LIBSL>
+	<LIBSQLITE>$(LIBDIR)\libsqlite.lib</LIBSQLITE>
+	<LIBVERS>$(LIBDIR)\libvers.lib</LIBVERS>
+	<LIBWIND>$(LIBDIR)\libwind.lib</LIBWIND>
+  </PropertyGroup>
+
+</Project>
