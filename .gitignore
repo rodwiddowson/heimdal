@@ -39,6 +39,10 @@ asn1_*.[cx]
 *.trs
 *.tmp
 
+# VC15 rules
+.vs
+*.vcxproj.user
+
 # Top-level files.
 
 /.vscode

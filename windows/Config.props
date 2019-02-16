@@ -1,0 +1,115 @@
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Config">
+
+    <HAVE_STDINT_H>1</HAVE_STDINT_H>
+    <HAVE_INT64_T>1</HAVE_INT64_T>
+
+    <!--
+	# 
+	# Features
+	#
+	# For each feature enabled here, a corresponding line must exist in
+	# the inline Perl script in include\config.vcxproj
+    -->
+
+    <!-- # Enable Kerberos v5 support in applications -->
+    <KRB5>1</KRB5>
+
+    <!-- # Enable KX509 support in the KDC -->
+    <KX509>1</KX509>
+
+    <!-- # Enable PKINIT -->
+    <PKINIT>1</PKINIT>
+
+    <!-- # Disable AFS support -->
+    <NO_AFS>1</NO_AFS>
+
+    <!-- # OpenSSL (mostly not needed on Windows, but should work)
+	 <INCLUDE_openssl_crypto></INCLUDE_openssl_crypto>
+	 <LIB_openssl_crypto></LIB_openssl_crypto>
+    -->
+
+    <!-- # OpenLDAP package is available
+	 <OPENLDAP>1</OPENLDAP>
+    -->
+
+    <!-- # OpenLDAP include directory
+	 <OPENLDAP_INC></OPENLDAP_INC>
+    -->
+
+    <!-- # OpenLDAP library to link against
+	 <OPENLDAP_LIB></OPENLDAP_LIB>
+    -->
+
+    <!-- # Support HDB LDAP module
+	 <OPENLDAP_MODULE>1</OPENLDAP_MODULE>
+    -->
+
+    <!-- # OTP support in applications -->
+    <OTP>1</OTP>
+
+    <!-- # Authentication support in telnet -->
+    <AUTHENTICATION>1</AUTHENTICATION>
+
+    <!-- # Enable diagnostics in telnet -->
+    <DIAGNOSTICS>1</DIAGNOSTICS>
+
+    <!-- # Enable encryption support in telnet -->
+    <ENCRYPTION>1</ENCRYPTION>
+
+    <!-- # Use the weak AFS string to key functions
+	 <ENABLE_AFS_STRING_TO_KEY>1</ENABLE_AFS_STRING_TO_KEY>
+    -->
+
+    <!-- # Support for broken ENV_{VAR,VAL} telnets
+	 <ENV_HACK>1</ENV_HACK>
+    -->
+
+    <!-- # Use the Kerberos Credentials Manager
+	 <HAVE_KCM>1</HAVE_KCM>
+    -->
+
+    <!-- # Use the sqlite backend -->
+    <HAVE_SCC>1</HAVE_SCC>
+
+    <DIR_hdbdir>$(COMMON_APPDATA)/heimdal/hdb</DIR_hdbdir>
+
+    <!-- # Disable weak crypto -->
+    <WEAK_CRYPTO>0</WEAK_CRYPTO>
+
+    <!-- # Enable hcrypt fallback mechanisms -->
+    <HCRYPTO_FALLBACK>1</HCRYPTO_FALLBACK>
+
+    <!-- # Disable use of GSS LOCALNAME support -->
+    <NO_LOCALNAME>1</NO_LOCALNAME>
+
+    <!-- # Windows CRT rename does not unlink the target -->
+    <RENAME_DOES_NOT_UNLINK>1</RENAME_DOES_NOT_UNLINK>
+
+    <!-- # Disable build of installers -->
+    <BUILD_INSTALLERS Condition="'$(NO_INSTALLERS)'==''">1</BUILD_INSTALLERS>
+
+  </PropertyGroup>
+
+  <PropertyGroup Label="PThread Config" Condition="'$(PTHREAD_INC)'!=''">
+
+    <!-- 
+	 # External dependencies
+	 #
+	 # For pthread support to be enabled, both PTHREAD_INC and PTHREAD_LIB
+	 # should be defined.  PTHREAD_INC should be the include directory
+	 # where pthread.h is to be found (i.e. $(PTHREAD_INC)\pthread.h should
+	 # exist), and PTHREAD_LIB is the full path to the pthread import
+	 # library.
+	 #
+	 # Note that both paths should not contain any whitespace.
+    -->
+
+    <HAVE_PTHREAD_H Condition="'$(PTHREAD_LIB)'!=''">1</HAVE_PTHREAD_H>
+
+    <!-- # Make thread-safe libraries -->
+    <ENABLE_PTHREAD_SUPPORT Condition="'$(PTHREAD_LIB)'!=''">1</ENABLE_PTHREAD_SUPPORT>
+
+  </PropertyGroup>
+
+</Project>
