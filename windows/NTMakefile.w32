@@ -38,8 +38,9 @@ test::
 prep::
 
 all:: prep
-
-!include <Win32.Mak>
+APPVER=6.1
+#nmake -f NTMakefile MAKEINFO=s:\cygwin64\bin\makeinfo.bat
+!include "Win32.Mak"
 
 !ifdef NODEBUG
 BUILD=rel
@@ -125,7 +126,7 @@ PERL=perl.exe
 CMP=cmp.exe
 MAKECAT=makecat.exe
 HHC=hhc.exe
-MAKEINFO=makeinfo.exe
+#MAKEINFO=perl s:\cygwin64\bin\texi2any 
 SED=sed.exe
 
 CANDLE_CMD=candle.exe
@@ -246,7 +247,7 @@ RC2RES = $(RC2RES_C) -fo $@ $**
 
 REQUIRED_TOOLS= \
 	"$(AWK_CMD)" "$(YACC_CMD)" "$(LEX_CMD)" "$(PYTHON)" "$(PERL)" \
-	"$(CMP)" "$(SED)" "$(MAKECAT)" "$(MAKEINFO)" "$(HHC)"
+	"$(CMP)" "$(SED)" "$(MAKECAT)" "$(MAKECAT)" "$(HHC)"
 
 !ifdef BUILD_INSTALLERS
 REQUIRED_TOOLS=$(REQUIRED_TOOLS) "$(CANDLE_CMD)" "$(LIGHT_CMD)"
@@ -260,7 +261,7 @@ check-utils:
 		if exist %%f @( \
 			echo Found %%f \
 		) else if "%%~$$PATH:f"=="" @( \
-			echo Could not find %%f in PATH && \
+			echo Could not find %%f $(HHC) in PATH && \
 			exit /b 1 \
 		) else @( \
 			echo Found %%~$$PATH:f \
@@ -516,8 +517,8 @@ SIGNTOOL_T=http://timestamp.verisign.com/scripts/timstamp.dll
 SIGNTOOL_T_SHA256=http://sha256timestamp.ws.symantec.com/sha256/timestamp
 !endif
 
-_CODESIGN=( $(SIGNTOOL) sign /fd sha1 $(SIGNTOOL_O) /t $(SIGNTOOL_T) $(SIGNTOOL_C) /v $@ )
-_CODESIGN_SHA256=( $(SIGNTOOL) sign /as /fd sha256 $(SIGNTOOL_O) /tr $(SIGNTOOL_T_SHA256) $(SIGNTOOL_C) /v $@ )
+_CODESIGN=( $(SIGNTOOL) sign /a /fd sha1 $(SIGNTOOL_O) /t $(SIGNTOOL_T)  /v $@ )
+_CODESIGN_SHA256=( $(SIGNTOOL) sign /a /as /fd sha256 $(SIGNTOOL_O) /tr $(SIGNTOOL_T_SHA256)  /v $@ )
 !else
 _CODESIGN=( echo Skipping code sign )
 _CODESIGN_SHA256=( echo Skipping sha256 code sign )

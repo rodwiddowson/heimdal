@@ -139,6 +139,8 @@ VCVER=VC100
 VCVER=VC90
 !elseif [ $(PERL) $(SRC)\cf\w32-detect-vc-version.pl $(CC) ]==14
 VCVER=VC80
+!elseif [ $(PERL) $(SRC)\cf\w32-detect-vc-version.pl $(CC) ]==19
+VCVER=VC141
 !else
 !  error Cant determine Visual C compiler version
 !endif

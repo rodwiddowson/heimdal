@@ -40,9 +40,9 @@ RELDIR=packages\windows\assembly
 #
 # ..to derive the public key token.
 #
-!ifndef CODESIGN_PKT
-!  error CODESIGN_PKT should be set to the public key token for codesigning certificate.  (See Windows\README).
-!endif
+#!ifndef CODESIGN_PKT
+#!  error CODESIGN_PKT should be set to the public key token for codesigning certificate.  (See Windows\README).
+#!endif
 
 prep:: mk-asm-dirs
 
@@ -90,7 +90,10 @@ $(ASMKRBDIR)\$(ASMKRBMAN) $(ASMKRBDIR)\$(ASMKRBMAN).cdf: \
 		$(ASMKRBDIR)\$(ASMKRBMAN).nohash $(ASMKRBBINS)
 	-$(RM) $(ASMKRBDIR)\$(ASMKRBMAN)
 	-$(RM) $(ASMKRBDIR)\$(ASMKRBMAN).cdf
-	$(MT) -manifest $(ASMKRBDIR)\$(ASMKRBMAN).nohash -out:$(ASMKRBDIR)\$(ASMKRBMAN) -hashupdate -makecdfs
+	cd $(ASMKRBDIR)
+	$(MT) -manifest $(ASMKRBMAN).nohash -out:$(ASMKRBMAN) -hashupdate -makecdfs
+	cd $(SRCDIR)
+
 
 $(ASMKRBDIR)\$(ASMKRBNAME).cat: $(ASMKRBDIR)\$(ASMKRBMAN).cdf
 	cd $(ASMKRBDIR)
