@@ -48,7 +48,7 @@
 
     <Package Id='*' Description='!(loc.Description)'
       Manufacturer='!(loc.Manufacturer)'
-      InstallerVersion='300' Languages='!(loc.LanguageCode)'
+      InstallerVersion='301' Languages='!(loc.LanguageCode)'
       Compressed='yes' SummaryCodepage='1252'
       Platform='$(var.Platform)'
       InstallScope='perMachine'
