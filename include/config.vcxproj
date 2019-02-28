@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{577379D3-6823-4DAB-9A1F-DDF4CC4FD902}</ProjectGuid>
+    <RootNamespace>config</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)Globals.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(INCDIR)\</OutDir>
+    <IntDir>$(OBJDIR)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(INCDIR)\</OutDir>
+    <IntDir>$(OBJDIR)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(INCDIR)\</OutDir>
+    <IntDir>$(OBJDIR)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(INCDIR)\</OutDir>
+    <IntDir>$(OBJDIR)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <CustomBuildStep>
+      <Command>if NOT exist $(INCDIR) md $(INCDIR)
+if NOT exist $(INCDIR)\kadm5 md $(INCDIR)\kadm5
+if NOT exist $(INCDIR)\hcrypto md $(INCDIR)\hcrypto
+if NOT exist $(INCDIR)\gssapi md $(INCDIR)\gssapi</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Creating include child directories</Message>
+      <Outputs>$(INCDIR)\gssapi</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <CustomBuildStep>
+      <Command>if NOT exist $(INCDIR) md $(INCDIR)
+if NOT exist $(INCDIR)\kadm5 md $(INCDIR)\kadm5
+if NOT exist $(INCDIR)\hcrypto md $(INCDIR)\hcrypto
+if NOT exist $(INCDIR)\gssapi md $(INCDIR)\gssapi</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Creating include child directories</Message>
+      <Outputs>$(INCDIR)\gssapi</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <CustomBuildStep>
+      <Command>if NOT exist $(INCDIR) md $(INCDIR)
+if NOT exist $(INCDIR)\kadm5 md $(INCDIR)\kadm5
+if NOT exist $(INCDIR)\hcrypto md $(INCDIR)\hcrypto
+if NOT exist $(INCDIR)\gssapi md $(INCDIR)\gssapi</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Creating include child directories</Message>
+      <Outputs>$(INCDIR)\gssapi</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <CustomBuildStep>
+      <Command>if NOT exist $(INCDIR) md $(INCDIR)
+if NOT exist $(INCDIR)\kadm5 md $(INCDIR)\kadm5
+if NOT exist $(INCDIR)\hcrypto md $(INCDIR)\hcrypto
+if NOT exist $(INCDIR)\gssapi md $(INCDIR)\gssapi</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Creating include child directories</Message>
+      <Outputs>$(INCDIR)\gssapi</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="config.h.w32">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">del /q $(objdir)\configgen.pl
+echo while(^&lt;^&gt;) { &gt; $(objdir)\configgen.pl
+echo   if (m/\@FEATURE_DEFS\@/) { &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(KRB5)") { print "#define KRB5 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(KRB4)") { print "#define KRB4 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(WEAK_CRYPTO)") { print "#define HEIM_WEAK_CRYPTO 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HCRYPTO_FALLBACK)") { print "#define HCRYPTO_FALLBACK 1\n"; } else { print "#define HCRYPTO_FALLBACK 0\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(PKINIT)") { print "#define PKINIT 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(NO_AFS)") { print "#define NO_AFS 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(OPENLDAP)") { print "#define OPENLDAP 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(OPENLDAP_MODULE)") { print "#define OPENLDAP_MODULE 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(OTP)") { print "#define OTP 1 \n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(AUTHENTICATION)") { print "#define AUTHENTICATION 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(DIAGNOSTICS)") { print "#define DIAGNOSTICS 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(ENCRYPTION)") { print "#define ENCRYPTION 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(ENABLE_AFS_STRING_TO_KEY)") { print "#define ENABLE_AFS_STRING_TO_KEY 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(ENABLE_PTHREAD_SUPPORT)") { print "#define ENABLE_PTHREAD_SUPPORT 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_PTHREAD_H)") { print "#define HAVE_PTHREAD_H 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(ENV_HACK)") { print "#define ENV_HACK 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_KCM)") { print "#define HAVE_KCM 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_SCC)") { print "#define HAVE_SCC 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_STDINT_H)") { print "#define HAVE_STDINT_H 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(DIR_hdbdir)") { print "#define HDB_DB_DIR \"".'$(DIR_hdbdir)'."\"\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_MSLSA_CACHE)") { print "#define HAVE_MSLSA_CACHE 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(NO_LOCALNAME)") { print "#define NO_LOCALNAME 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo   } elsif (m/\@VERSION_OPTDEFS\@/) { &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(VER_PRERELEASE)") { print "#define VER_PRERELEASE 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(VER_PRIVATE)") { print "#define VER_PRIVATE \"$(VER_PRIVATE)\"\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(VER_SPECIAL)") { print "#define VER_SPECIAL \"$(VER_SPECIAL)\"\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(BUILD)" eq "dbg") { print "#define VER_DEBUG 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     print "#define HOST \"$(COMPUTERNAME)\"\n"; &gt;&gt; $(objdir)\configgen.pl
+echo   } else { &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE\@/$(VER_PACKAGE)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE_NAME\@/$(VER_PACKAGE_NAME)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s{\@PACKAGE_BUGREPORT\@}{$(VER_PACKAGE_BUGREPORT:@=\@)}; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE_VERSION\@/$(VER_PACKAGE_VERSION)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE_COPYRIGHT\@/$(VER_PACKAGE_COPYRIGHT)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE_COMPANY\@/$(VER_PACKAGE_COMPANY)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@MAJOR\@/$(VER_PRODUCT_MAJOR)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@MINOR\@/$(VER_PRODUCT_MINOR)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@AUX\@/$(VER_PRODUCT_AUX)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PATCH\@/$(VER_PRODUCT_PATCH)/; &gt;&gt; $(objdir)\configgen.pl
+echo     print $_; &gt;&gt; $(objdir)\configgen.pl
+echo   } &gt;&gt; $(objdir)\configgen.pl
+echo }  &gt;&gt; $(objdir)\configgen.pl
+perl $(objdir)\configgen.pl &lt; %(FullPath) &gt; $(INCDIR)\config.h
+echo const char *heimdal_long_version = "@(#)$$Version: $(VER_PACKAGE_NAME) $(VER_PACKAGE_VERSION) by $(USERNAME) on $(COMPUTERNAME) ($(CPU)-pc-windows) $$"; &gt; $(INCDIR)\version.h
+echo const char *heimdal_version = "$(VER_PACKAGE_NAME) $(VER_PACKAGE_VERSION)"; &gt;&gt; $(INCDIR)\version.h
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(INCDIR)\config.h;$(INCDIR)\version.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\windows\config.props;..\windows\version.props;$(MSBuildProjectFullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">del /q $(objdir)\configgen.pl
+echo while(^&lt;^&gt;) { &gt; $(objdir)\configgen.pl
+echo   if (m/\@FEATURE_DEFS\@/) { &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(KRB5)") { print "#define KRB5 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(KRB4)") { print "#define KRB4 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(WEAK_CRYPTO)") { print "#define HEIM_WEAK_CRYPTO 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HCRYPTO_FALLBACK)") { print "#define HCRYPTO_FALLBACK 1\n"; } else { print "#define HCRYPTO_FALLBACK 0\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(PKINIT)") { print "#define PKINIT 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(NO_AFS)") { print "#define NO_AFS 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(OPENLDAP)") { print "#define OPENLDAP 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(OPENLDAP_MODULE)") { print "#define OPENLDAP_MODULE 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(OTP)") { print "#define OTP 1 \n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(AUTHENTICATION)") { print "#define AUTHENTICATION 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(DIAGNOSTICS)") { print "#define DIAGNOSTICS 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(ENCRYPTION)") { print "#define ENCRYPTION 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(ENABLE_AFS_STRING_TO_KEY)") { print "#define ENABLE_AFS_STRING_TO_KEY 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(ENABLE_PTHREAD_SUPPORT)") { print "#define ENABLE_PTHREAD_SUPPORT 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_PTHREAD_H)") { print "#define HAVE_PTHREAD_H 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(ENV_HACK)") { print "#define ENV_HACK 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_KCM)") { print "#define HAVE_KCM 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_SCC)") { print "#define HAVE_SCC 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_STDINT_H)") { print "#define HAVE_STDINT_H 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(DIR_hdbdir)") { print "#define HDB_DB_DIR \"".'$(DIR_hdbdir)'."\"\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_MSLSA_CACHE)") { print "#define HAVE_MSLSA_CACHE 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(NO_LOCALNAME)") { print "#define NO_LOCALNAME 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo   } elsif (m/\@VERSION_OPTDEFS\@/) { &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(VER_PRERELEASE)") { print "#define VER_PRERELEASE 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(VER_PRIVATE)") { print "#define VER_PRIVATE \"$(VER_PRIVATE)\"\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(VER_SPECIAL)") { print "#define VER_SPECIAL \"$(VER_SPECIAL)\"\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(BUILD)" eq "dbg") { print "#define VER_DEBUG 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     print "#define HOST \"$(COMPUTERNAME)\"\n"; &gt;&gt; $(objdir)\configgen.pl
+echo   } else { &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE\@/$(VER_PACKAGE)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE_NAME\@/$(VER_PACKAGE_NAME)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s{\@PACKAGE_BUGREPORT\@}{$(VER_PACKAGE_BUGREPORT:@=\@)}; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE_VERSION\@/$(VER_PACKAGE_VERSION)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE_COPYRIGHT\@/$(VER_PACKAGE_COPYRIGHT)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE_COMPANY\@/$(VER_PACKAGE_COMPANY)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@MAJOR\@/$(VER_PRODUCT_MAJOR)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@MINOR\@/$(VER_PRODUCT_MINOR)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@AUX\@/$(VER_PRODUCT_AUX)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PATCH\@/$(VER_PRODUCT_PATCH)/; &gt;&gt; $(objdir)\configgen.pl
+echo     print $_; &gt;&gt; $(objdir)\configgen.pl
+echo   } &gt;&gt; $(objdir)\configgen.pl
+echo }  &gt;&gt; $(objdir)\configgen.pl
+perl $(objdir)\configgen.pl &lt; %(FullPath) &gt; $(INCDIR)\config.h
+echo const char *heimdal_long_version = "@(#)$$Version: $(VER_PACKAGE_NAME) $(VER_PACKAGE_VERSION) by $(USERNAME) on $(COMPUTERNAME) ($(CPU)-pc-windows) $$"; &gt; $(INCDIR)\version.h
+echo const char *heimdal_version = "$(VER_PACKAGE_NAME) $(VER_PACKAGE_VERSION)"; &gt;&gt; $(INCDIR)\version.h
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(INCDIR)\config.h;$(INCDIR)\version.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\windows\config.props;..\windows\version.props;$(MSBuildProjectFullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">del /q $(objdir)\configgen.pl
+echo while(^&lt;^&gt;) { &gt; $(objdir)\configgen.pl
+echo   if (m/\@FEATURE_DEFS\@/) { &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(KRB5)") { print "#define KRB5 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(KRB4)") { print "#define KRB4 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(WEAK_CRYPTO)") { print "#define HEIM_WEAK_CRYPTO 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HCRYPTO_FALLBACK)") { print "#define HCRYPTO_FALLBACK 1\n"; } else { print "#define HCRYPTO_FALLBACK 0\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(PKINIT)") { print "#define PKINIT 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(NO_AFS)") { print "#define NO_AFS 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(OPENLDAP)") { print "#define OPENLDAP 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(OPENLDAP_MODULE)") { print "#define OPENLDAP_MODULE 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(OTP)") { print "#define OTP 1 \n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(AUTHENTICATION)") { print "#define AUTHENTICATION 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(DIAGNOSTICS)") { print "#define DIAGNOSTICS 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(ENCRYPTION)") { print "#define ENCRYPTION 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(ENABLE_AFS_STRING_TO_KEY)") { print "#define ENABLE_AFS_STRING_TO_KEY 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(ENABLE_PTHREAD_SUPPORT)") { print "#define ENABLE_PTHREAD_SUPPORT 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_PTHREAD_H)") { print "#define HAVE_PTHREAD_H 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(ENV_HACK)") { print "#define ENV_HACK 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_KCM)") { print "#define HAVE_KCM 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_SCC)") { print "#define HAVE_SCC 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_STDINT_H)") { print "#define HAVE_STDINT_H 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(DIR_hdbdir)") { print "#define HDB_DB_DIR \"".'$(DIR_hdbdir)'."\"\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_MSLSA_CACHE)") { print "#define HAVE_MSLSA_CACHE 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(NO_LOCALNAME)") { print "#define NO_LOCALNAME 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo   } elsif (m/\@VERSION_OPTDEFS\@/) { &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(VER_PRERELEASE)") { print "#define VER_PRERELEASE 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(VER_PRIVATE)") { print "#define VER_PRIVATE \"$(VER_PRIVATE)\"\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(VER_SPECIAL)") { print "#define VER_SPECIAL \"$(VER_SPECIAL)\"\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(BUILD)" eq "dbg") { print "#define VER_DEBUG 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     print "#define HOST \"$(COMPUTERNAME)\"\n"; &gt;&gt; $(objdir)\configgen.pl
+echo   } else { &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE\@/$(VER_PACKAGE)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE_NAME\@/$(VER_PACKAGE_NAME)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s{\@PACKAGE_BUGREPORT\@}{$(VER_PACKAGE_BUGREPORT:@=\@)}; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE_VERSION\@/$(VER_PACKAGE_VERSION)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE_COPYRIGHT\@/$(VER_PACKAGE_COPYRIGHT)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE_COMPANY\@/$(VER_PACKAGE_COMPANY)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@MAJOR\@/$(VER_PRODUCT_MAJOR)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@MINOR\@/$(VER_PRODUCT_MINOR)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@AUX\@/$(VER_PRODUCT_AUX)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PATCH\@/$(VER_PRODUCT_PATCH)/; &gt;&gt; $(objdir)\configgen.pl
+echo     print $_; &gt;&gt; $(objdir)\configgen.pl
+echo   } &gt;&gt; $(objdir)\configgen.pl
+echo }  &gt;&gt; $(objdir)\configgen.pl
+perl $(objdir)\configgen.pl &lt; %(FullPath) &gt; $(INCDIR)\config.h
+echo const char *heimdal_long_version = "@(#)$$Version: $(VER_PACKAGE_NAME) $(VER_PACKAGE_VERSION) by $(USERNAME) on $(COMPUTERNAME) ($(CPU)-pc-windows) $$"; &gt; $(INCDIR)\version.h
+echo const char *heimdal_version = "$(VER_PACKAGE_NAME) $(VER_PACKAGE_VERSION)"; &gt;&gt; $(INCDIR)\version.h
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(INCDIR)\config.h;$(INCDIR)\version.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\windows\config.props;..\windows\version.props;$(MSBuildProjectFullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">del /q $(objdir)\configgen.pl
+echo while(^&lt;^&gt;) { &gt; $(objdir)\configgen.pl
+echo   if (m/\@FEATURE_DEFS\@/) { &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(KRB5)") { print "#define KRB5 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(KRB4)") { print "#define KRB4 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(WEAK_CRYPTO)") { print "#define HEIM_WEAK_CRYPTO 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HCRYPTO_FALLBACK)") { print "#define HCRYPTO_FALLBACK 1\n"; } else { print "#define HCRYPTO_FALLBACK 0\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(PKINIT)") { print "#define PKINIT 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(NO_AFS)") { print "#define NO_AFS 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(OPENLDAP)") { print "#define OPENLDAP 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(OPENLDAP_MODULE)") { print "#define OPENLDAP_MODULE 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(OTP)") { print "#define OTP 1 \n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(AUTHENTICATION)") { print "#define AUTHENTICATION 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(DIAGNOSTICS)") { print "#define DIAGNOSTICS 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(ENCRYPTION)") { print "#define ENCRYPTION 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(ENABLE_AFS_STRING_TO_KEY)") { print "#define ENABLE_AFS_STRING_TO_KEY 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(ENABLE_PTHREAD_SUPPORT)") { print "#define ENABLE_PTHREAD_SUPPORT 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_PTHREAD_H)") { print "#define HAVE_PTHREAD_H 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(ENV_HACK)") { print "#define ENV_HACK 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_KCM)") { print "#define HAVE_KCM 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_SCC)") { print "#define HAVE_SCC 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_STDINT_H)") { print "#define HAVE_STDINT_H 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(DIR_hdbdir)") { print "#define HDB_DB_DIR \"".'$(DIR_hdbdir)'."\"\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(HAVE_MSLSA_CACHE)") { print "#define HAVE_MSLSA_CACHE 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(NO_LOCALNAME)") { print "#define NO_LOCALNAME 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo   } elsif (m/\@VERSION_OPTDEFS\@/) { &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(VER_PRERELEASE)") { print "#define VER_PRERELEASE 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(VER_PRIVATE)") { print "#define VER_PRIVATE \"$(VER_PRIVATE)\"\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(VER_SPECIAL)") { print "#define VER_SPECIAL \"$(VER_SPECIAL)\"\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     if ("$(BUILD)" eq "dbg") { print "#define VER_DEBUG 1\n"; } &gt;&gt; $(objdir)\configgen.pl
+echo     print "#define HOST \"$(COMPUTERNAME)\"\n"; &gt;&gt; $(objdir)\configgen.pl
+echo   } else { &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE\@/$(VER_PACKAGE)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE_NAME\@/$(VER_PACKAGE_NAME)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s{\@PACKAGE_BUGREPORT\@}{$(VER_PACKAGE_BUGREPORT:@=\@)}; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE_VERSION\@/$(VER_PACKAGE_VERSION)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE_COPYRIGHT\@/$(VER_PACKAGE_COPYRIGHT)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PACKAGE_COMPANY\@/$(VER_PACKAGE_COMPANY)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@MAJOR\@/$(VER_PRODUCT_MAJOR)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@MINOR\@/$(VER_PRODUCT_MINOR)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@AUX\@/$(VER_PRODUCT_AUX)/; &gt;&gt; $(objdir)\configgen.pl
+echo     s/\@PATCH\@/$(VER_PRODUCT_PATCH)/; &gt;&gt; $(objdir)\configgen.pl
+echo     print $_; &gt;&gt; $(objdir)\configgen.pl
+echo   } &gt;&gt; $(objdir)\configgen.pl
+echo }  &gt;&gt; $(objdir)\configgen.pl
+perl $(objdir)\configgen.pl &lt; %(FullPath) &gt; $(INCDIR)\config.h
+echo const char *heimdal_long_version = "@(#)$$Version: $(VER_PACKAGE_NAME) $(VER_PACKAGE_VERSION) by $(USERNAME) on $(COMPUTERNAME) ($(CPU)-pc-windows) $$"; &gt; $(INCDIR)\version.h
+echo const char *heimdal_version = "$(VER_PACKAGE_NAME) $(VER_PACKAGE_VERSION)"; &gt;&gt; $(INCDIR)\version.h
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(INCDIR)\config.h;$(INCDIR)\version.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\windows\config.props;..\windows\version.props;$(MSBuildProjectFullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building version.h and config.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building version.h and config.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building version.h and config.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building version.h and config.h</Message>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </ExcludedFromBuild>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="crypto-headers.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copy %(FullPath) $(INCDIR)\%(Filename).h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copy %(FullPath) $(INCDIR)\%(Filename).h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">copy %(FullPath) $(INCDIR)\%(Filename).h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">copy %(FullPath) $(INCDIR)\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(INCDIR)\%(Filename).h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(INCDIR)\%(Filename).h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(INCDIR)\%(Filename).h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(INCDIR)\%(Filename).h</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="heim_threads.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copy %(FullPath) $(INCDIR)\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(INCDIR)\%(Filename).h</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copy %(FullPath) $(INCDIR)\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(INCDIR)\%(Filename).h</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">copy %(FullPath) $(INCDIR)\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(INCDIR)\%(Filename).h</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">copy %(FullPath) $(INCDIR)\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(INCDIR)\%(Filename).h</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
