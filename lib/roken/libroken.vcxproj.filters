@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Built Executable">
+      <UniqueIdentifier>{4f53764a-f7dd-4787-9ee9-4e9703108ce3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="base64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bswap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cloexec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="concat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="detach.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dirent.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dlfcn_w32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dumpdata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ecalloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="environment.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="eread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="erealloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="err.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="errx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="esetenv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="estrdup.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ewrite.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="flock.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fnmatch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ftello.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="get_window_size.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getaddrinfo_hostspec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getarg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getauxval.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getifaddrs_w32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getnameinfo_verified.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getopt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getprogname.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gettimeofday.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getuserinfo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hex.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hostent_find_fqdn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="inet_aton.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="issuid.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="localtime_r.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lstat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memset_s.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mini_inetd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mkdir.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mkstemp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net_read.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net_write.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parse_bytes.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parse_time.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parse_units.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rand.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="realloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rename.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="resolve.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="roken_gethostby.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtbl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="secure_getenv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sendmsg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="setenv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="setprogname.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="simple_exec_w32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sleep.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="snprintf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="socket.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sockstartup_w32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="strcollect.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="strerror_r.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="strlcat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="strlcpy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="strndup.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="strpool.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="strptime.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="strsep.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="strsep_copy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="strtok_r.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="strtoll.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="strtoull.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="syslogc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="timegm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="timeval.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tm2time.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tsearch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="unvis.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="verr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="verrx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vis.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vwarn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vwarnx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="warnerr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="warnx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="win32_alloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="writev.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xfree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="emalloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="warn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="strftime.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="base64.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="getarg.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="hex.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="parse_bytes.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="parse_time.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="parse_units.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resolve.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="roken-common.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="rtbl.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="xdbm.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="dirent.hin">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="dlfcn.hin">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="err.hin">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="fnmatch.hin">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ifaddrs.hin">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="search.hin">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="stdbool.hin">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="syslog.hin">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="vis.hin">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="$(OBJ)\make-roken.exe">
+      <Filter>Built Executable</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>
