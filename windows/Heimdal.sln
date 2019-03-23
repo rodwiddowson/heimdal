@@ -10,6 +10,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bits", "..\include\bits.vcx
 		{577379D3-6823-4DAB-9A1F-DDF4CC4FD902} = {577379D3-6823-4DAB-9A1F-DDF4CC4FD902}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "make-roken", "..\lib\roken\make-roken.vcxproj", "{764D7993-1B14-4E9E-9D29-4B58CBE68CEE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{577379D3-6823-4DAB-9A1F-DDF4CC4FD902} = {577379D3-6823-4DAB-9A1F-DDF4CC4FD902}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -34,6 +39,14 @@ Global
 		{7C844DAB-5132-4776-9074-F75D1B551469}.Release|x64.Build.0 = Release|x64
 		{7C844DAB-5132-4776-9074-F75D1B551469}.Release|x86.ActiveCfg = Release|Win32
 		{7C844DAB-5132-4776-9074-F75D1B551469}.Release|x86.Build.0 = Release|Win32
+		{764D7993-1B14-4E9E-9D29-4B58CBE68CEE}.Debug|x64.ActiveCfg = Debug|x64
+		{764D7993-1B14-4E9E-9D29-4B58CBE68CEE}.Debug|x64.Build.0 = Debug|x64
+		{764D7993-1B14-4E9E-9D29-4B58CBE68CEE}.Debug|x86.ActiveCfg = Debug|Win32
+		{764D7993-1B14-4E9E-9D29-4B58CBE68CEE}.Debug|x86.Build.0 = Debug|Win32
+		{764D7993-1B14-4E9E-9D29-4B58CBE68CEE}.Release|x64.ActiveCfg = Release|x64
+		{764D7993-1B14-4E9E-9D29-4B58CBE68CEE}.Release|x64.Build.0 = Release|x64
+		{764D7993-1B14-4E9E-9D29-4B58CBE68CEE}.Release|x86.ActiveCfg = Release|Win32
+		{764D7993-1B14-4E9E-9D29-4B58CBE68CEE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
