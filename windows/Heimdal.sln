@@ -62,6 +62,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test-readenv", "..\lib\roke
 		{7D9BE546-C20D-4B82-A5C0-BCD70941CCE0} = {7D9BE546-C20D-4B82-A5C0-BCD70941CCE0}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "parse_bytes-test", "..\lib\roken\parse_bytes-test.vcxproj", "{8FACE3D6-8140-41DD-A524-00E7D7D2E48E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7D9BE546-C20D-4B82-A5C0-BCD70941CCE0} = {7D9BE546-C20D-4B82-A5C0-BCD70941CCE0}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -158,6 +163,14 @@ Global
 		{A36CE595-5C13-4AE9-8E14-E432407D4299}.Release|x64.Build.0 = Release|x64
 		{A36CE595-5C13-4AE9-8E14-E432407D4299}.Release|x86.ActiveCfg = Release|Win32
 		{A36CE595-5C13-4AE9-8E14-E432407D4299}.Release|x86.Build.0 = Release|Win32
+		{8FACE3D6-8140-41DD-A524-00E7D7D2E48E}.Debug|x64.ActiveCfg = Debug|x64
+		{8FACE3D6-8140-41DD-A524-00E7D7D2E48E}.Debug|x64.Build.0 = Debug|x64
+		{8FACE3D6-8140-41DD-A524-00E7D7D2E48E}.Debug|x86.ActiveCfg = Debug|Win32
+		{8FACE3D6-8140-41DD-A524-00E7D7D2E48E}.Debug|x86.Build.0 = Debug|Win32
+		{8FACE3D6-8140-41DD-A524-00E7D7D2E48E}.Release|x64.ActiveCfg = Release|x64
+		{8FACE3D6-8140-41DD-A524-00E7D7D2E48E}.Release|x64.Build.0 = Release|x64
+		{8FACE3D6-8140-41DD-A524-00E7D7D2E48E}.Release|x86.ActiveCfg = Release|Win32
+		{8FACE3D6-8140-41DD-A524-00E7D7D2E48E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -171,6 +184,7 @@ Global
 		{0CAD0FFC-E495-4729-858D-B4799F536EE7} = {9CB217CC-7729-44A9-97EB-53453CB9545E}
 		{14AFB9B7-139A-4FB0-983C-2AC745DCF9E9} = {9CB217CC-7729-44A9-97EB-53453CB9545E}
 		{A36CE595-5C13-4AE9-8E14-E432407D4299} = {9CB217CC-7729-44A9-97EB-53453CB9545E}
+		{8FACE3D6-8140-41DD-A524-00E7D7D2E48E} = {9CB217CC-7729-44A9-97EB-53453CB9545E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9C072272-9589-4AE5-90AF-7C05D104B582}
