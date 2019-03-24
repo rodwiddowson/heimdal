@@ -28,6 +28,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Roken", "Roken", "{9CB217CC-7729-44A9-97EB-53453CB9545E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "base64-test", "..\lib\roken\base64-test.vcxproj", "{6C93FCE3-ADA4-4D2D-8018-F3A5BC8EC189}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7D9BE546-C20D-4B82-A5C0-BCD70941CCE0} = {7D9BE546-C20D-4B82-A5C0-BCD70941CCE0}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "getaddrinfo-test", "..\lib\roken\getaddrinfo-test.vcxproj", "{883B7328-D1A9-478B-9963-211BB1934A91}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7D9BE546-C20D-4B82-A5C0-BCD70941CCE0} = {7D9BE546-C20D-4B82-A5C0-BCD70941CCE0}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +85,14 @@ Global
 		{6C93FCE3-ADA4-4D2D-8018-F3A5BC8EC189}.Release|x64.Build.0 = Release|x64
 		{6C93FCE3-ADA4-4D2D-8018-F3A5BC8EC189}.Release|x86.ActiveCfg = Release|Win32
 		{6C93FCE3-ADA4-4D2D-8018-F3A5BC8EC189}.Release|x86.Build.0 = Release|Win32
+		{883B7328-D1A9-478B-9963-211BB1934A91}.Debug|x64.ActiveCfg = Debug|x64
+		{883B7328-D1A9-478B-9963-211BB1934A91}.Debug|x64.Build.0 = Debug|x64
+		{883B7328-D1A9-478B-9963-211BB1934A91}.Debug|x86.ActiveCfg = Debug|Win32
+		{883B7328-D1A9-478B-9963-211BB1934A91}.Debug|x86.Build.0 = Debug|Win32
+		{883B7328-D1A9-478B-9963-211BB1934A91}.Release|x64.ActiveCfg = Release|x64
+		{883B7328-D1A9-478B-9963-211BB1934A91}.Release|x64.Build.0 = Release|x64
+		{883B7328-D1A9-478B-9963-211BB1934A91}.Release|x86.ActiveCfg = Release|Win32
+		{883B7328-D1A9-478B-9963-211BB1934A91}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +100,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9CB217CC-7729-44A9-97EB-53453CB9545E} = {42625341-5960-4F97-B166-FEFA0271CCF5}
 		{6C93FCE3-ADA4-4D2D-8018-F3A5BC8EC189} = {9CB217CC-7729-44A9-97EB-53453CB9545E}
+		{883B7328-D1A9-478B-9963-211BB1934A91} = {9CB217CC-7729-44A9-97EB-53453CB9545E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9C072272-9589-4AE5-90AF-7C05D104B582}
