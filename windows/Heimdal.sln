@@ -77,6 +77,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "snprintf-test", "..\lib\rok
 		{7D9BE546-C20D-4B82-A5C0-BCD70941CCE0} = {7D9BE546-C20D-4B82-A5C0-BCD70941CCE0}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "strpftime-test", "..\lib\roken\strpftime-test.vcxproj", "{3955E5C2-F76E-4F5C-A5BE-8D9AE4CC40EB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7D9BE546-C20D-4B82-A5C0-BCD70941CCE0} = {7D9BE546-C20D-4B82-A5C0-BCD70941CCE0}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -197,6 +202,14 @@ Global
 		{BC3B5D97-7F5D-4F73-86B3-D254895D650F}.Release|x64.Build.0 = Release|x64
 		{BC3B5D97-7F5D-4F73-86B3-D254895D650F}.Release|x86.ActiveCfg = Release|Win32
 		{BC3B5D97-7F5D-4F73-86B3-D254895D650F}.Release|x86.Build.0 = Release|Win32
+		{3955E5C2-F76E-4F5C-A5BE-8D9AE4CC40EB}.Debug|x64.ActiveCfg = Debug|x64
+		{3955E5C2-F76E-4F5C-A5BE-8D9AE4CC40EB}.Debug|x64.Build.0 = Debug|x64
+		{3955E5C2-F76E-4F5C-A5BE-8D9AE4CC40EB}.Debug|x86.ActiveCfg = Debug|Win32
+		{3955E5C2-F76E-4F5C-A5BE-8D9AE4CC40EB}.Debug|x86.Build.0 = Debug|Win32
+		{3955E5C2-F76E-4F5C-A5BE-8D9AE4CC40EB}.Release|x64.ActiveCfg = Release|x64
+		{3955E5C2-F76E-4F5C-A5BE-8D9AE4CC40EB}.Release|x64.Build.0 = Release|x64
+		{3955E5C2-F76E-4F5C-A5BE-8D9AE4CC40EB}.Release|x86.ActiveCfg = Release|Win32
+		{3955E5C2-F76E-4F5C-A5BE-8D9AE4CC40EB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -213,6 +226,7 @@ Global
 		{8FACE3D6-8140-41DD-A524-00E7D7D2E48E} = {9CB217CC-7729-44A9-97EB-53453CB9545E}
 		{48ED85B1-C706-419E-897A-FE028EEC9E7A} = {9CB217CC-7729-44A9-97EB-53453CB9545E}
 		{BC3B5D97-7F5D-4F73-86B3-D254895D650F} = {9CB217CC-7729-44A9-97EB-53453CB9545E}
+		{3955E5C2-F76E-4F5C-A5BE-8D9AE4CC40EB} = {9CB217CC-7729-44A9-97EB-53453CB9545E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9C072272-9589-4AE5-90AF-7C05D104B582}
