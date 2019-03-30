@@ -7,6 +7,14 @@
 	<CPU Condition="'$(Platform)'=='x64'">AMD64</CPU>
 	<MCPU Condition="'$(Platform)'=='Win32'">x86</MCPU>
 	<MCPU Condition="'$(Platform)'=='x64'">amd64</MCPU>
+	<BUILD Condition="'$(Configuration)'=='Debug'">dbg</BUILD>
+	<BUILD Condition="'$(Configuration)'=='Release'">rel</BUILD>
+
+	<!-- Symstore handling -->
+	<SymStore Condition="'$(SYMSTORE_EXE)'!=''">$(SYMSTORE_DEFAULT)</SymStore>
+
+	<SymStoreImport Condition="'$(SymStore)'=='' or '$(SYMSTORE_ROOT)'==''">Echo No symstore:</SymStoreImport>
+	<SymStoreImport Condition="'$(SymStore)'!='' and '$(SYMSTORE_ROOT)'!=''">"$(SymStore)" add /s $(SYMSTORE_ROOT) /t "Heimdal" /v "$(BUILD)-$(CPU)-$($(VER_PACKAGE_VERSION)</SymStoreImport>
 
 	<!-- # Directory macros -->
 	<SRC>$(SolutionDir)..</SRC>
