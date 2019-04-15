@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(objdir)\map_table.c" />
+    <ClCompile Include="$(objdir)\wind_err.c" />
+    <ClCompile Include="$(objdir)\bidi_table.c" />
+    <ClCompile Include="$(objdir)\combining_table.c" />
+    <ClCompile Include="$(objdir)\errorlist_table.c" />
+    <ClCompile Include="$(objdir)\normalize_table.c" />
+    <ClCompile Include="$(objdir)\punycode_examples.c" />
+    <ClCompile Include="bidi.c" />
+    <ClCompile Include="combining.c" />
+    <ClCompile Include="errorlist.c" />
+    <ClCompile Include="ldap.c" />
+    <ClCompile Include="map.c" />
+    <ClCompile Include="normalize.c" />
+    <ClCompile Include="punycode.c" />
+    <ClCompile Include="stringprep.c" />
+    <ClCompile Include="utf8.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="wind.h">
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(INCDIR)\%(Filename).h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(INCDIR)\%(Filename).h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(INCDIR)\%(Filename).h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(INCDIR)\%(Filename).h</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copy %(FullPath) $(INCDIR)\%(Filename).h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copy %(FullPath) $(INCDIR)\%(Filename).h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">copy %(FullPath) $(INCDIR)\%(Filename).h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">copy %(FullPath) $(INCDIR)\%(Filename).h</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="gen-map.py">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(Obj)
+$(Python) $(projectDir)gen-map.py $(projectDir)rfc3454.txt $(OBJ)
+copy map_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Running $(Python) $(projectDir)gen-map.py $(projectDir)rfc3454.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(obj)\map_table.c;$(obj)\map_table.h;$(incdir)\map_table.c</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(Obj)
+$(Python) $(projectDir)gen-map.py $(projectDir)rfc3454.txt $(OBJ)
+copy map_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Running $(Python) $(projectDir)gen-map.py $(projectDir)rfc3454.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(obj)\map_table.c;$(obj)\map_table.h;$(incdir)\map_table.c</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(Obj)
+$(Python) $(projectDir)gen-map.py $(projectDir)rfc3454.txt $(OBJ)
+copy map_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Running $(Python) $(projectDir)gen-map.py $(projectDir)rfc3454.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(obj)\map_table.c;$(obj)\map_table.h;$(incdir)\map_table.c</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(Obj)
+$(Python) $(projectDir)gen-map.py $(projectDir)rfc3454.txt $(OBJ)
+copy map_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Running $(Python) $(projectDir)gen-map.py $(projectDir)rfc3454.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(obj)\map_table.c;$(obj)\map_table.h;$(incdir)\map_table.c</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="gen-bidi.py">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(Obj)
+$(Python) $(projectDir)gen-bidi.py $(projectDir)rfc3454.txt $(OBJ)
+copy bidi_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Running: $(Python) $(projectDir)gen-bidi.py $(projectDir)rfc3454.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OBJ)\bidi_table.h;$(OBJ)\bidi_table.c;$(incdir)\bidi_table.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(Obj)
+$(Python) $(projectDir)gen-bidi.py $(projectDir)rfc3454.txt $(OBJ)
+copy bidi_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Running: $(Python) $(projectDir)gen-bidi.py $(projectDir)rfc3454.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OBJ)\bidi_table.h;$(OBJ)\bidi_table.c;$(incdir)\bidi_table.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(Obj)
+$(Python) $(projectDir)gen-bidi.py $(projectDir)rfc3454.txt $(OBJ)
+copy bidi_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Running: $(Python) $(projectDir)gen-bidi.py $(projectDir)rfc3454.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OBJ)\bidi_table.h;$(OBJ)\bidi_table.c;$(incdir)\bidi_table.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(Obj)
+$(Python) $(projectDir)gen-bidi.py $(projectDir)rfc3454.txt $(OBJ)
+copy bidi_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Running: $(Python) $(projectDir)gen-bidi.py $(projectDir)rfc3454.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OBJ)\bidi_table.h;$(OBJ)\bidi_table.c;$(incdir)\bidi_table.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="gen-combining.py">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(Obj)
+$(Python) $(projectDir)gen-combining.py $(projectDir)UnicodeData.txt $(OBJ)
+copy combining_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Running: $(Python) $(projectDir)gen-combining.py $(projectDir)UnicodeData.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(incdir)\combining_table.h;$(obj)\combining_table.h;$(obj)\combining_table.c;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(Obj)
+$(Python) $(projectDir)gen-combining.py $(projectDir)UnicodeData.txt $(OBJ)
+copy combining_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Running: $(Python) $(projectDir)gen-combining.py $(projectDir)UnicodeData.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(incdir)\combining_table.h;$(obj)\combining_table.h;$(obj)\combining_table.c;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(Obj)
+$(Python) $(projectDir)gen-combining.py $(projectDir)UnicodeData.txt $(OBJ)
+copy combining_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Running: $(Python) $(projectDir)gen-combining.py $(projectDir)UnicodeData.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(incdir)\combining_table.h;$(obj)\combining_table.h;$(obj)\combining_table.c;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(Obj)
+$(Python) $(projectDir)gen-combining.py $(projectDir)UnicodeData.txt $(OBJ)
+copy combining_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Running: $(Python) $(projectDir)gen-combining.py $(projectDir)UnicodeData.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(incdir)\combining_table.h;$(obj)\combining_table.h;$(obj)\combining_table.c;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="gen-errorlist.py">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(Obj)
+$(Python) $(projectDir)gen-errorlist.py $(projectDir)rfc3454.txt $(OBJ)
+copy errorlist_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Running: $(Python) $(projectDir)gen-errorlist.py $(projectDir)rfc3454.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(incdir)\errorlist_table.h;$(obj)\errorlist_table.h;$(obj)\errorlist_table.c;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(Obj)
+$(Python) $(projectDir)gen-errorlist.py $(projectDir)rfc3454.txt $(OBJ)
+copy errorlist_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Running: $(Python) $(projectDir)gen-errorlist.py $(projectDir)rfc3454.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(incdir)\errorlist_table.h;$(obj)\errorlist_table.h;$(obj)\errorlist_table.c;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(Obj)
+$(Python) $(projectDir)gen-errorlist.py $(projectDir)rfc3454.txt $(OBJ)
+copy errorlist_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Running: $(Python) $(projectDir)gen-errorlist.py $(projectDir)rfc3454.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(incdir)\errorlist_table.h;$(obj)\errorlist_table.h;$(obj)\errorlist_table.c;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(Obj)
+$(Python) $(projectDir)gen-errorlist.py $(projectDir)rfc3454.txt $(OBJ)
+copy errorlist_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Running: $(Python) $(projectDir)gen-errorlist.py $(projectDir)rfc3454.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(incdir)\errorlist_table.h;$(obj)\errorlist_table.h;$(obj)\errorlist_table.c;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="gen-normalize.py">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;CompositionExclusions-3.2.0.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;CompositionExclusions-3.2.0.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;CompositionExclusions-3.2.0.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;CompositionExclusions-3.2.0.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(Obj)
+$(Python) $(projectDir)gen-normalize.py $(projectDir)UnicodeData.txt $(projectDir)CompositionExclusions-3.2.0.txt $(OBJ)
+copy normalize_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Running $(Python) $(projectDir)gen-normalize.py $(projectDir)UnicodeData.txt $(projectDir)CompositionExclusions-3.2.0.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(incdir)\normalize_table.h;$(obj)\normalize_table.h;$(obj)\normalize_table.c;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(Obj)
+$(Python) $(projectDir)gen-normalize.py $(projectDir)UnicodeData.txt $(projectDir)CompositionExclusions-3.2.0.txt $(OBJ)
+copy normalize_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Running $(Python) $(projectDir)gen-normalize.py $(projectDir)UnicodeData.txt $(projectDir)CompositionExclusions-3.2.0.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(incdir)\normalize_table.h;$(obj)\normalize_table.h;$(obj)\normalize_table.c;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(Obj)
+$(Python) $(projectDir)gen-normalize.py $(projectDir)UnicodeData.txt $(projectDir)CompositionExclusions-3.2.0.txt $(OBJ)
+copy normalize_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Running $(Python) $(projectDir)gen-normalize.py $(projectDir)UnicodeData.txt $(projectDir)CompositionExclusions-3.2.0.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(incdir)\normalize_table.h;$(obj)\normalize_table.h;$(obj)\normalize_table.c;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(Obj)
+$(Python) $(projectDir)gen-normalize.py $(projectDir)UnicodeData.txt $(projectDir)CompositionExclusions-3.2.0.txt $(OBJ)
+copy normalize_table.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Running $(Python) $(projectDir)gen-normalize.py $(projectDir)UnicodeData.txt $(projectDir)CompositionExclusions-3.2.0.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(incdir)\normalize_table.h;$(obj)\normalize_table.h;$(obj)\normalize_table.c;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="gen-punycode-examples.py">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">util.py;rfc4518.txt;rfc4518.py;rfc3454.txt;rfc3454.py;gen-map.py;stringprep.py;generate.py;UnicodeData.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(Obj)
+$(Python) $(projectDir)gen-punycode-examples.py $(projectDir)rfc3492.txt $(OBJ)
+copy punycode_examples.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Python) $(projectDir)gen-punycode-examples.py $(projectDir)rfc3492.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(incdir)\punycode_examples.h;$(obj)\punycode_examples.h;$(obj)\punycode_examples.c;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(Obj)
+$(Python) $(projectDir)gen-punycode-examples.py $(projectDir)rfc3492.txt $(OBJ)
+copy punycode_examples.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Python) $(projectDir)gen-punycode-examples.py $(projectDir)rfc3492.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(incdir)\punycode_examples.h;$(obj)\punycode_examples.h;$(obj)\punycode_examples.c;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(Obj)
+$(Python) $(projectDir)gen-punycode-examples.py $(projectDir)rfc3492.txt $(OBJ)
+copy punycode_examples.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Python) $(projectDir)gen-punycode-examples.py $(projectDir)rfc3492.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(incdir)\punycode_examples.h;$(obj)\punycode_examples.h;$(obj)\punycode_examples.c;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(Obj)
+$(Python) $(projectDir)gen-punycode-examples.py $(projectDir)rfc3492.txt $(OBJ)
+copy punycode_examples.h $(incdir)\
+cd $(projectDir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Python) $(projectDir)gen-punycode-examples.py $(projectDir)rfc3492.txt $(OBJ)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(incdir)\punycode_examples.h;$(obj)\punycode_examples.h;$(obj)\punycode_examples.c;%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="generate.py" />
+    <None Include="rfc3454.py" />
+    <None Include="rfc4518.py" />
+    <None Include="stringprep.py" />
+    <CustomBuild Include="wind_err.et">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(obj)
+$(bindir)\compile_et %(FullPath)
+copy %(filename).h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Running: $(bindir)\compile_et %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(obj)\%(filename).c;$(obj)\%(filename).h;$(incdir)\%(filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(obj)
+$(bindir)\compile_et %(FullPath)
+copy %(filename).h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Running: $(bindir)\compile_et %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(obj)\%(filename).c;$(obj)\%(filename).h;$(incdir)\%(filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(obj)
+$(bindir)\compile_et %(FullPath)
+copy %(filename).h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Running: $(bindir)\compile_et %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(obj)\%(filename).c;$(obj)\%(filename).h;$(incdir)\%(filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(obj)
+$(bindir)\compile_et %(FullPath)
+copy %(filename).h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Running: $(bindir)\compile_et %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(obj)\%(filename).c;$(obj)\%(filename).h;$(incdir)\%(filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="util.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="rfc3454.txt" />
+    <Text Include="rfc3490.txt" />
+    <Text Include="rfc3491.txt" />
+    <Text Include="rfc3492.txt" />
+    <Text Include="rfc4013.txt" />
+    <Text Include="rfc4518.txt" />
+    <Text Include="UnicodeData.txt" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{AF588BC2-C01F-49FC-9CB0-101C6BF7BF3D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>libwind</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)Globals.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(projectDir);$(INCDIR);$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <OutDir>$(LIBDIR)\</OutDir>
+    <IntDir>$(OBJDIR)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(projectDir);$(INCDIR);$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <OutDir>$(LIBDIR)\</OutDir>
+    <IntDir>$(OBJDIR)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(projectDir);$(INCDIR);$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <OutDir>$(LIBDIR)\</OutDir>
+    <IntDir>$(OBJDIR)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(projectDir);$(INCDIR);$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <OutDir>$(LIBDIR)\</OutDir>
+    <IntDir>$(OBJDIR)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>$(HEIMDAL_GLOBAL_DEFINES);WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>$(HEIMDAL_DISABLE_WARNINGS)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>$(HEIMDAL_GLOBAL_DEFINES);WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>$(HEIMDAL_DISABLE_WARNINGS)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>$(HEIMDAL_GLOBAL_DEFINES);_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>$(HEIMDAL_DISABLE_WARNINGS)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>$(HEIMDAL_GLOBAL_DEFINES);NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>$(HEIMDAL_DISABLE_WARNINGS)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

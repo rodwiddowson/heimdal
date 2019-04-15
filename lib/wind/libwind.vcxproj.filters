@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Built Executable">
+      <UniqueIdentifier>{4f53764a-f7dd-4787-9ee9-4e9703108ce3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Python">
+      <UniqueIdentifier>{ef933387-f70c-4d92-8bb6-d8f967d5b39b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Python\AllInput">
+      <UniqueIdentifier>{e99e3fae-23aa-4846-8f27-75707c055218}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Table">
+      <UniqueIdentifier>{06b32011-7832-4118-97e8-d6497063dae3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{367d60e7-0621-4c23-9047-e64b0028f063}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(objdir)\map_table.c">
+      <Filter>Generated Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(objdir)\wind_err.c">
+      <Filter>Generated Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(objdir)\bidi_table.c">
+      <Filter>Generated Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(objdir)\combining_table.c">
+      <Filter>Generated Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(objdir)\errorlist_table.c">
+      <Filter>Generated Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(objdir)\normalize_table.c">
+      <Filter>Generated Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(objdir)\punycode_examples.c">
+      <Filter>Generated Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bidi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="combining.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="errorlist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ldap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="map.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="normalize.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="punycode.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stringprep.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utf8.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="wind.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="gen-map.py">
+      <Filter>Python</Filter>
+    </CustomBuild>
+    <CustomBuild Include="gen-bidi.py">
+      <Filter>Python</Filter>
+    </CustomBuild>
+    <CustomBuild Include="gen-combining.py">
+      <Filter>Python</Filter>
+    </CustomBuild>
+    <CustomBuild Include="gen-errorlist.py">
+      <Filter>Python</Filter>
+    </CustomBuild>
+    <CustomBuild Include="gen-normalize.py">
+      <Filter>Python</Filter>
+    </CustomBuild>
+    <CustomBuild Include="gen-punycode-examples.py">
+      <Filter>Python</Filter>
+    </CustomBuild>
+    <CustomBuild Include="wind_err.et">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="stringprep.py">
+      <Filter>Python\AllInput</Filter>
+    </None>
+    <None Include="rfc3454.py">
+      <Filter>Python\AllInput</Filter>
+    </None>
+    <None Include="generate.py">
+      <Filter>Python\AllInput</Filter>
+    </None>
+    <None Include="rfc4518.py">
+      <Filter>Python\AllInput</Filter>
+    </None>
+    <None Include="util.py">
+      <Filter>Python\AllInput</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="rfc3454.txt">
+      <Filter>Table</Filter>
+    </Text>
+    <Text Include="rfc3490.txt">
+      <Filter>Table</Filter>
+    </Text>
+    <Text Include="rfc3491.txt">
+      <Filter>Table</Filter>
+    </Text>
+    <Text Include="rfc3492.txt">
+      <Filter>Table</Filter>
+    </Text>
+    <Text Include="rfc4013.txt">
+      <Filter>Table</Filter>
+    </Text>
+    <Text Include="rfc4518.txt">
+      <Filter>Table</Filter>
+    </Text>
+    <Text Include="UnicodeData.txt">
+      <Filter>Table</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
