@@ -40,7 +40,7 @@
     <SDKSRCDIR>$(SDKDIR)\src</SDKSRCDIR>
     <SDKREDISTDIR>$(SDKDIR)\redist\$(CPU)</SDKREDISTDIR>
 
-    <SRCDIR Condition="'$(RELDIR)'!=''">$(SRC)\$(RELDIR)</SRCDIR>
+    <SRCDIR>$(ProjectDir)</SRCDIR>
     <OBJ Condition="'$(RELDIR)'!=''">$(OBJDIR)\$(RELDIR)</OBJ>
     <OBJ Condition="'$(RELDIR)'==''">$(OBJDIR)</OBJ>
     
