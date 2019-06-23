@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Built Executable">
+      <UniqueIdentifier>{4f53764a-f7dd-4787-9ee9-4e9703108ce3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{367d60e7-0621-4c23-9047-e64b0028f063}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="asn1">
+      <UniqueIdentifier>{ef933387-f70c-4d92-8bb6-d8f967d5b39b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="der.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="der_cmp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="der_copy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="der_format.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="der_free.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="der_get.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="der_put.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="extra.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="timegm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="der_length.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(obj)\asn1_cms_asn1.c">
+      <Filter>Generated Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(obj)\asn1_digest_asn1.c">
+      <Filter>Generated Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(obj)\asn1_err.c">
+      <Filter>Generated Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(obj)\asn1_krb5_asn1.c">
+      <Filter>Generated Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(obj)\asn1_kx509_asn1.c">
+      <Filter>Generated Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(obj)\asn1_pkcs8_asn1.c">
+      <Filter>Generated Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(obj)\asn1_pkcs9_asn1.c">
+      <Filter>Generated Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(obj)\asn1_pkcs12_asn1.c">
+      <Filter>Generated Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(obj)\asn1_pkinit_asn1.c">
+      <Filter>Generated Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(obj)\asn1_rfc2459_asn1.c">
+      <Filter>Generated Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="asn1_err.et">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="cms.asn1">
+      <Filter>asn1</Filter>
+    </CustomBuild>
+    <CustomBuild Include="digest.asn1">
+      <Filter>asn1</Filter>
+    </CustomBuild>
+    <CustomBuild Include="krb5.asn1">
+      <Filter>asn1</Filter>
+    </CustomBuild>
+    <CustomBuild Include="kx509.asn1">
+      <Filter>asn1</Filter>
+    </CustomBuild>
+    <CustomBuild Include="pkcs8.asn1">
+      <Filter>asn1</Filter>
+    </CustomBuild>
+    <CustomBuild Include="pkcs9.asn1">
+      <Filter>asn1</Filter>
+    </CustomBuild>
+    <CustomBuild Include="pkcs12.asn1">
+      <Filter>asn1</Filter>
+    </CustomBuild>
+    <CustomBuild Include="pkinit.asn1">
+      <Filter>asn1</Filter>
+    </CustomBuild>
+    <CustomBuild Include="rfc2459.asn1">
+      <Filter>asn1</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="asn1_queue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="asn1-common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="asn1-template.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="check-common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="der.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="der_locl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gen_locl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="heim_asn1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="roken_rename.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="symbol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

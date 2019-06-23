@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(obj)\asn1_err.c" />
+    <ClCompile Include="$(obj)\asn1_cms_asn1.c" />
+    <ClCompile Include="$(obj)\asn1_digest_asn1.c" />
+    <ClCompile Include="$(obj)\asn1_krb5_asn1.c" />
+    <ClCompile Include="$(obj)\asn1_kx509_asn1.c" />
+    <ClCompile Include="$(obj)\asn1_pkcs8_asn1.c" />
+    <ClCompile Include="$(obj)\asn1_pkcs9_asn1.c" />
+    <ClCompile Include="$(obj)\asn1_pkcs12_asn1.c" />
+    <ClCompile Include="$(obj)\asn1_pkinit_asn1.c" />
+    <ClCompile Include="$(obj)\asn1_rfc2459_asn1.c" />
+    <ClCompile Include="der.c" />
+    <ClCompile Include="der_cmp.c" />
+    <ClCompile Include="der_copy.c" />
+    <ClCompile Include="der_format.c" />
+    <ClCompile Include="der_free.c" />
+    <ClCompile Include="der_get.c" />
+    <ClCompile Include="der_length.c" />
+    <ClCompile Include="der_put.c" />
+    <ClCompile Include="extra.c" />
+    <ClCompile Include="timegm.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="cms.asn1">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file --option-file=$(ProjectDir)cms.opt %(FullPath) cms_asn1
+copy cms_asn1.hx cms_asn1.h
+copy cms_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing: $(BINDIR)\asn1_compile.exe --one-code-file --option-file=$(projectdir\cms.opt %(FullPath) cms_asn1</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OBJ)\asn1_cms_asn1.x;$(OBJ)\asn1_cms_asn1.c;$(OBJ)\cms_asn1.hx;$(OBJ)\cms_asn1.h;$(IncDir)\cms_asn1.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(projectdir)%(fileName).opt</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file --option-file=$(ProjectDir)cms.opt %(FullPath) cms_asn1
+copy cms_asn1.hx cms_asn1.h
+copy cms_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing: $(BINDIR)\asn1_compile.exe --one-code-file --option-file=$(projectdir\cms.opt %(FullPath) cms_asn1</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OBJ)\asn1_cms_asn1.x;$(OBJ)\asn1_cms_asn1.c;$(OBJ)\cms_asn1.hx;$(OBJ)\cms_asn1.h;$(IncDir)\cms_asn1.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(projectdir)%(fileName).opt</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file --option-file=$(ProjectDir)cms.opt %(FullPath) cms_asn1
+copy cms_asn1.hx cms_asn1.h
+copy cms_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing: $(BINDIR)\asn1_compile.exe --one-code-file --option-file=$(projectdir\cms.opt %(FullPath) cms_asn1</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OBJ)\asn1_cms_asn1.x;$(OBJ)\asn1_cms_asn1.c;$(OBJ)\cms_asn1.hx;$(OBJ)\cms_asn1.h;$(IncDir)\cms_asn1.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(projectdir)%(fileName).opt</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file --option-file=$(ProjectDir)cms.opt %(FullPath) cms_asn1
+copy cms_asn1.hx cms_asn1.h
+copy cms_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing: $(BINDIR)\asn1_compile.exe --one-code-file --option-file=$(projectdir\cms.opt %(FullPath) cms_asn1</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OBJ)\asn1_cms_asn1.x;$(OBJ)\asn1_cms_asn1.c;$(OBJ)\cms_asn1.hx;$(OBJ)\cms_asn1.h;$(IncDir)\cms_asn1.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(projectdir)%(fileName).opt</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="asn1_err.et">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(obj)
+$(bindir)\compile_et %(FullPath)
+copy %(filename).h $(incdir)\
+cd $(projectdir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(obj)
+$(bindir)\compile_et %(FullPath)
+copy %(filename).h $(incdir)\
+cd $(projectdir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(obj)
+$(bindir)\compile_et %(FullPath)
+copy %(filename).h $(incdir)\
+cd $(projectdir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(obj)
+$(bindir)\compile_et %(FullPath)
+copy %(filename).h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing : $(bindir)\compile_et %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(obj)\%(filename).c;$(obj)\%(filename).h;$(incdir)\%(filename).h;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing : $(bindir)\compile_et %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(obj)\%(filename).c;$(obj)\%(filename).h;$(incdir)\%(filename).h;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing : $(bindir)\compile_et %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(obj)\%(filename).c;$(obj)\%(filename).h;$(incdir)\%(filename).h;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing : $(bindir)\compile_et %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(obj)\%(filename).c;$(obj)\%(filename).h;$(incdir)\%(filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="digest.asn1">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Tools -$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(FileName)_asn1</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Tools -$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(FileName)_asn1</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools -$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(FileName)_asn1</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools -$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(FileName)_asn1</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="krb5.asn1">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file --option-file=$(ProjectDir)%(fileName).opt %(FullPath) %(filename)_asn1</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file --option-file=$(ProjectDir)%(fileName).opt %(FullPath) %(filename)_asn1</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file --option-file=$(ProjectDir)%(fileName).opt %(FullPath) %(filename)_asn1</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file --option-file=$(ProjectDir)%(fileName).opt %(FullPath) %(filename)_asn1</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file --option-file=$(ProjectDir)%(fileName).opt %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file --option-file=$(ProjectDir)%(fileName).opt %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file --option-file=$(ProjectDir)%(fileName).opt %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file --option-file=$(ProjectDir)%(fileName).opt %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(projectdir)%(fileName).opt</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(projectdir)%(fileName).opt</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(projectdir)%(fileName).opt</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(projectdir)%(fileName).opt</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="kx509.asn1">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="pkcs12.asn1">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="pkcs8.asn1">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="pkcs9.asn1">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="pkinit.asn1">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file %(FullPath) %(filename)_asn1</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="rfc2459.asn1">
+      <FileType>Document</FileType>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OBJ)\asn1_%(fileName)_asn1.x;$(OBJ)\asn1_%(fileName).hx;$(OBJ)\asn1_%(fileName).h;$(OBJ)\asn1_%(fileName)_asn1.c;$(IncDir)\asn1_%(fileName).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file --preserve-binary=TBSCertificate --preserve-binary=TBSCRLCertList  --preserve-binary=Name --sequence=GeneralNames  --sequence=Extensions  --sequence=CRLDistributionPoints  %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file --preserve-binary=TBSCertificate --preserve-binary=TBSCRLCertList  --preserve-binary=Name --sequence=GeneralNames  --sequence=Extensions  --sequence=CRLDistributionPoints  %(FullPath) %(filename)_asn1</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file --preserve-binary=TBSCertificate --preserve-binary=TBSCRLCertList  --preserve-binary=Name --sequence=GeneralNames  --sequence=Extensions  --sequence=CRLDistributionPoints  %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file --preserve-binary=TBSCertificate --preserve-binary=TBSCRLCertList  --preserve-binary=Name --sequence=GeneralNames  --sequence=Extensions  --sequence=CRLDistributionPoints  %(FullPath) %(filename)_asn1</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file --preserve-binary=TBSCertificate --preserve-binary=TBSCRLCertList  --preserve-binary=Name --sequence=GeneralNames  --sequence=Extensions  --sequence=CRLDistributionPoints  %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file --preserve-binary=TBSCertificate --preserve-binary=TBSCRLCertList  --preserve-binary=Name --sequence=GeneralNames  --sequence=Extensions  --sequence=CRLDistributionPoints  %(FullPath) %(filename)_asn1</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(OBJ)
+$(BINDIR)\asn1_compile.exe --one-code-file --preserve-binary=TBSCertificate --preserve-binary=TBSCRLCertList  --preserve-binary=Name --sequence=GeneralNames  --sequence=Extensions  --sequence=CRLDistributionPoints  %(FullPath) %(filename)_asn1
+copy %(filename)_asn1.hx %(filename)_asn1.h
+copy %(filename)_asn1.h $(incdir)\
+cd $(projectdir)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools : $(BINDIR)\asn1_compile.exe --one-code-file --preserve-binary=TBSCertificate --preserve-binary=TBSCRLCertList  --preserve-binary=Name --sequence=GeneralNames  --sequence=Extensions  --sequence=CRLDistributionPoints  %(FullPath) %(filename)_asn1</Message>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="asn1-common.h" />
+    <ClInclude Include="asn1-template.h" />
+    <ClInclude Include="asn1_queue.h" />
+    <ClInclude Include="check-common.h" />
+    <ClInclude Include="der.h" />
+    <ClInclude Include="der_locl.h" />
+    <ClInclude Include="gen_locl.h" />
+    <ClInclude Include="hash.h" />
+    <ClInclude Include="heim_asn1.h" />
+    <ClInclude Include="lex.h" />
+    <ClInclude Include="roken_rename.h" />
+    <ClInclude Include="symbol.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{8A430411-13E8-4D7C-ABB2-1AE3B7932D5C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>libwind</RootNamespace>
+    <RELDIR>lib\asn1\</RELDIR>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)Globals.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(projectDir);$(obj);$(INCDIR);$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <OutDir>$(LIBDIR)\</OutDir>
+    <IntDir>$(OBJDIR)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(projectDir);$(obj);$(INCDIR);$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <OutDir>$(LIBDIR)\</OutDir>
+    <IntDir>$(OBJDIR)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(projectDir);$(obj);$(INCDIR);$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <OutDir>$(LIBDIR)\</OutDir>
+    <IntDir>$(OBJDIR)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(projectDir);$(obj);$(INCDIR);$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <OutDir>$(LIBDIR)\</OutDir>
+    <IntDir>$(OBJDIR)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>$(HEIMDAL_GLOBAL_DEFINES);WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>$(HEIMDAL_DISABLE_WARNINGS)</DisableSpecificWarnings>
+      <UndefinePreprocessorDefinitions>ROKEN_RENAME;</UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PreBuildEvent>
+      <Command>if not exist $(OBJ) mkdir $(obj)</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>$(HEIMDAL_GLOBAL_DEFINES);WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>$(HEIMDAL_DISABLE_WARNINGS)</DisableSpecificWarnings>
+      <UndefinePreprocessorDefinitions>ROKEN_RENAME;</UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PreBuildEvent>
+      <Command>if not exist $(OBJ) mkdir $(obj)</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>$(HEIMDAL_GLOBAL_DEFINES);_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>$(HEIMDAL_DISABLE_WARNINGS)</DisableSpecificWarnings>
+      <UndefinePreprocessorDefinitions>ROKEN_RENAME;</UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PreBuildEvent>
+      <Command>if not exist $(OBJ) mkdir $(obj)</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>$(HEIMDAL_GLOBAL_DEFINES);NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>$(HEIMDAL_DISABLE_WARNINGS)</DisableSpecificWarnings>
+      <UndefinePreprocessorDefinitions>ROKEN_RENAME;</UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PreBuildEvent>
+      <Command>if not exist $(OBJ) mkdir $(obj)</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
